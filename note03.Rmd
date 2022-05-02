@@ -8,6 +8,7 @@ output: html_notebook
 ```{r}
 library("compiler")
 library("memoise")
+library("microbenchmark")
 ```
 
 ## 3.1 효율적인 프로그래밍을 위한 상위 5가지 팁
@@ -131,4 +132,127 @@ as.numeric(factor(x))
 m <- month.name[c(1, 12, 3)]
 fac_m <- factor(m, levels = month.name)
 sort(fac_m)
+
+```
+
+## 3.5 apply family
+
+```{r}
+data("ex_mat", package = "efficient")
+row_sd = apply(ex_mat, 1, sd,  na.rm = TRUE)
+row_sd
+```
+
+```{r}
+col_sd <- apply(ex_mat, 2, sd)
+col_sd
+```
+
+```{r}
+row_sd <- apply(ex_mat, 1, sd, na.rm = TRUE)
+row_sd
+```
+
+### 3.5.1 예: 영화 데이터 세트
+
+```{r}
+data(movies, package = "ggplot2movies")
+movies
+```
+
+```{r}
+ratings <- movies[, 7:16]
+ratings
+```
+
+```{r}
+popular <- apply(ratings, 1, nnet::which.is.max)
+plot(table(popular))
+```
+
+### 3.5.2 유형 일관성
+
+```{r}
+two_cols <- data.frame(x = 1:5, y = letters[1:5])
+zero_cols <- data.frame()
+sapply(two_cols, class)
+sapply(zero_cols, class)
+```
+
+```{r}
+two_cols[, 1:2]
+```
+
+```{r}
+two_cols[, 1]
+```
+
+```{r}
+two_tb <- tibble::tibble(two_cols)
+two_tb[c(1, 2)]
+```
+
+## 3.6 변수 캐싱
+
+```{r}
+plot_mpg = function(row_to_remove) {
+  data(mpg, package = "ggplot2")
+  mpg = mpg[-row_to_remove, ]
+  plot(mpg$cty, mpg$hwy)
+  lines(lowess(mpg$cty, mpg$hwy), col = 2)
+}
+m_plot_mpg = memoise(plot_mpg)
+microbenchmark(times = 10, unit = "ms", m_plot_mpg(10), plot_mpg(10))
+```
+
+### 3.6.1 함수 클로저
+
+```{r}
+stop_watch <- function() {
+  start_time = NULL
+  stop_time <- NULL
+  start = function() start_time <<- Sys.time()
+  stop <- function() {
+    stop_time <<- Sys.time()
+    difftime(stop_time, start_time)
+  }
+  list(start = start, stop = stop)
+}
+```
+
+```{r}
+watch <- stop_watch()
+watch$start()
+```
+
+```{r}
+watch2 <- stop_watch()
+watch2$start()
+watch2$stop()
+```
+
+```{r}
+watch$stop()
+```
+
+## 3.7 바이트 컴파일러
+
+차이가 없다. 이는 함수를 만들때 이미 컴파일이 된다는 의미이다.
+
+```{r}
+library("compiler")
+mean_r = function(x) {
+  m = 0
+  n = length(x)
+  for (i in seq_len(n))
+    m = m + x[i] / n
+  m
+}
+cmp_mean_r = cmpfun(mean_r)
+```
+
+```{r}
+x = rnorm(1000)
+microbenchmark(times = 10, unit = "ms", # milliseconds
+          mean_r(x), cmp_mean_r(x), mean(x))
 ```
