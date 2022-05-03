@@ -30,7 +30,7 @@ profvis(expr = {
   ggplot(df, aes(long, lat, group = paste(group, Year))) +
     geom_path(aes(color = Year))
   ggsave("figures/icesheet-test.png")
-}, interval = 0.01, prof_out = "prof_out/ice-prof")
+}, interval = 0.01, prof_out = "temp/ice-prof")
 ```
 
 #### 1.6.3.1 연습
