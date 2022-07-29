@@ -1781,7 +1781,7 @@ pre code {
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYgKCFleGlzdHMoXCJ4XCIpKSB7XG4gIHggPC0gYygzLCA1KVxuICB5IDwtIHhbMl1cbn1cbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiaWYgKCFleGlzdHMoXCJ4XCIpKSB7XG4gIHggPC0gYygzLCA1KVxuICB5IDwtIHhbMl1cbn0ifQ== -->
 <pre class="r"><code>if (!exists(&quot;x&quot;)) {
   x &lt;- c(3, 5)
   y &lt;- x[2]
@@ -1793,14 +1793,14 @@ pre code {
 <h3>9.2.7 할당</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3lzdGVtLnRpbWUoZXhwcjEgPC0gcm5vcm0oMWU2KSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoic3lzdGVtLnRpbWUoZXhwcjEgPC0gcm5vcm0oMWU2KSkifQ== -->
 <pre class="r"><code>system.time(expr1 &lt;- rnorm(1e6))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgdXNlciAgc3lzdGVtIGVsYXBzZWQgXG4gIDAuMDUzICAgMC4wMDEgICAwLjA1MyBcbiJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgdXNlciAgc3lzdGVtIGVsYXBzZWQgXG4gIDAuMDI2ICAgMC4wMDIgICAwLjAyOCBcbiJ9 -->
 <pre><code>   user  system elapsed 
-  0.053   0.001   0.053 </code></pre>
+  0.026   0.002   0.028 </code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJ5KHN5c3RlbS50aW1lKGV4cHIxID0gcm5vcm0oMWU2KSkpICMg7JeQ65+sIOycoOuwnFxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoidHJ5KHN5c3RlbS50aW1lKGV4cHIxID0gcm5vcm0oMWU2KSkpICMg7JeQ65+sIOycoOuwnCJ9 -->
 <pre class="r"><code>try(system.time(expr1 = rnorm(1e6))) # 에러 유발</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gc3lzdGVtLnRpbWUoZXhwcjEgPSBybm9ybSgxZSswNikpIDogXG4gIHVudXNlZCBhcmd1bWVudCAoZXhwcjEgPSBybm9ybSgxZSswNikpXG4ifQ== -->
@@ -1814,7 +1814,7 @@ pre code {
 <h3>9.2.10 중괄호</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBHb29kIHN0eWxlLCBmYWlsc1xueCA8LSAxXG55IDwtIDJcbmlmICh4IDwgNSkge1xuICB5XG59IGVsc2Uge1xuICB4XG59XG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjpbIiMgR29vZCBzdHlsZSwgZmFpbHMiLCJ4IDwtIDEiLCJ5IDwtIDIiLCJpZiAoeCA8IDUpIHtcbiAgeVxufSBlbHNlIHtcbiAgeFxufSJdfQ== -->
 <pre class="r"><code># Good style, fails
 x &lt;- 1
 y &lt;- 2

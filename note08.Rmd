@@ -13,5 +13,5 @@ plot(res)
 ```
 
 ```{r}
-upload_results(res)
+benchmarkme::upload_results(res)
 ```

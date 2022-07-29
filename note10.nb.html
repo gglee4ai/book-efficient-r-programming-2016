@@ -1833,9 +1833,9 @@ pre code {
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXByb3BvcyhcImxtXCIpWzE6Nl0gIyBzaG93IG9ubHkgZmlyc3Qgc2l4IHJlc3VsdHNcbmBgYCJ9 -->
 <pre class="r"><code>apropos(&quot;lm&quot;)[1:6] # show only first six results</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiLmNvbE1lYW5zXCIgICAgIFwiLmxtLmZpdFwiICAgICAgIFwiY29sTWVhbnNcIiAgICAgIFwiY29sTWVhbnNcIiAgICAgXG5bNV0gXCJjb25maW50LmxtXCIgICAgXCJjb250ci5oZWxtZXJ0XCJcbiJ9 -->
-<pre><code>[1] &quot;.colMeans&quot;     &quot;.lm.fit&quot;       &quot;colMeans&quot;      &quot;colMeans&quot;     
-[5] &quot;confint.lm&quot;    &quot;contr.helmert&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiLmNvbE1lYW5zXCIgICAgIFwiLmxtLmZpdFwiICAgICAgIFwiY29sTWVhbnNcIiAgICAgIFwiY29uZmludC5sbVwiICAgXG5bNV0gXCJjb250ci5oZWxtZXJ0XCIgXCJkdW1teS5jb2VmLmxtXCJcbiJ9 -->
+<pre><code>[1] &quot;.colMeans&quot;     &quot;.lm.fit&quot;       &quot;colMeans&quot;      &quot;confint.lm&quot;   
+[5] &quot;contr.helmert&quot; &quot;dummy.coef.lm&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1851,10 +1851,18 @@ pre code {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudiA9IHZpZ25ldHRlKFwic29sdXRpb25zMDFcIiwgcGFja2FnZSA9IFwiZWZmaWNpZW50XCIpXG5lZGl0KHYpXG5gYGAifQ== -->
-<pre class="r"><code>v = vignette(&quot;solutions01&quot;, package = &quot;efficient&quot;)
-edit(v)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudiA9IHZpZ25ldHRlKFwic29sdXRpb25zMDFcIiwgcGFja2FnZSA9IFwiZWZmaWNpZW50XCIpXG5gYGAifQ== -->
+<pre class="r"><code>v = vignette(&quot;solutions01&quot;, package = &quot;efficient&quot;)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogdmlnbmV0dGUg4oCYc29sdXRpb25zMDHigJkgbm90IGZvdW5kXG4ifQ== -->
+<pre><code>Warning: vignette ‘solutions01’ not found</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZWRpdCh2KVxuYGBgIn0= -->
+<pre class="r"><code>edit(v)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwidmlnbmV0dGUg4oCYc29sdXRpb25zMDHigJkgbm90IGZvdW5kXCJcbiJ9 -->
+<pre><code>[1] &quot;vignette ‘solutions01’ not found&quot;</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1881,9 +1889,8 @@ edit(v)</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3B0aW0ocGFyID0gMCwgZm4gPSBmbilcbmBgYCJ9 -->
 <pre class="r"><code>optim(par = 0, fn = fn)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBpbiBvcHRpbShwYXIgPSAwLCBmbiA9IGZuKSA6XG4gIG9uZS1kaW1lbnNpb25hbCBvcHRpbWl6YXRpb24gYnkgTmVsZGVyLU1lYWQgaXMgdW5yZWxpYWJsZTpcbnVzZSBcIkJyZW50XCIgb3Igb3B0aW1pemUoKSBkaXJlY3RseVxuIn0= -->
-<pre><code>Warning in optim(par = 0, fn = fn) :
-  one-dimensional optimization by Nelder-Mead is unreliable:
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogb25lLWRpbWVuc2lvbmFsIG9wdGltaXphdGlvbiBieSBOZWxkZXItTWVhZCBpcyB1bnJlbGlhYmxlOlxudXNlIFwiQnJlbnRcIiBvciBvcHRpbWl6ZSgpIGRpcmVjdGx5XG4ifQ== -->
+<pre><code>Warning: one-dimensional optimization by Nelder-Mead is unreliable:
 use &quot;Brent&quot; or optimize() directly</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiJHBhclxuWzFdIDAuNzA3MTA2OFxuXG4kdmFsdWVcblsxXSAtMC4yNVxuXG4kY291bnRzXG5mdW5jdGlvbiBncmFkaWVudCBcbiAgICAgIDU4ICAgICAgIE5BIFxuXG4kY29udmVyZ2VuY2VcblsxXSAwXG5cbiRtZXNzYWdlXG5OVUxMXG4ifQ== -->
